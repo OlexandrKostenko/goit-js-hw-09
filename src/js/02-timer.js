@@ -8,13 +8,33 @@ const valueOfDays = document.querySelector('[data-days]');
 const valueOfHours = document.querySelector('[data-hours]');
 const valueOfMinutes = document.querySelector('[data-minutes]');
 const valueOfSeconds = document.querySelector('[data-seconds]');
-/* const timer = document.querySelector('.timer'); */
+const timer = document.querySelector('.timer');
+const fields = document.querySelectorAll('.field');
+const spanValue = document.querySelectorAll('.value');
+const spanLabel = document.querySelectorAll('.label');
 
 btnStart.disabled = true;
 btnStart.addEventListener('click', count);
 let targetTime = null;
 let timeInterval = null;
 
+for (const field of fields) {
+    field.style.display = 'flex';
+    field.style.flexDirection = 'column';
+    field.style.justifyContent = 'center';
+    field.style.alignItems = 'center';
+    field.style.margin = '5px';
+}
+
+timer.style.display = 'flex';
+
+for (const span of spanValue) {
+    span.style.fontSize = "48px";
+}
+
+for (const label of spanLabel) {
+    label.style.fontSize = '24px';
+}
 
 const options = {
     enableTime: true,
@@ -81,6 +101,8 @@ function convertMs(ms) {
   
     return { days, hours, minutes, seconds };
   }
+
+
   
 
   
