@@ -4,11 +4,11 @@ import Notiflix from 'notiflix';
 
 const input = document.getElementById('#datetime-picker');
 const btnStart = document.querySelector('[data-start]');
-/* const valueOfDays = document.querySelector('[data-days]');
+const valueOfDays = document.querySelector('[data-days]');
 const valueOfHours = document.querySelector('[data-hours]');
 const valueOfMinutes = document.querySelector('[data-minutes]');
-const valueOfSeconds = document.querySelector('[data-seconds]'); */
-const timer = document.querySelector('.timer');
+const valueOfSeconds = document.querySelector('[data-seconds]');
+/* const timer = document.querySelector('.timer'); */
 
 btnStart.disabled = true;
 btnStart.addEventListener('click', count);
@@ -53,11 +53,11 @@ function counter() {
 }
 
 function updateValueTime({ days, hours, minutes, seconds}) {
-/*     valueOfDays.textContent = `${days}`;
+    valueOfDays.textContent = `${days}`;
     valueOfHours.textContent = `${hours}`;
     valueOfMinutes.textContent = `${minutes}`;
-    valueOfSeconds.textContent = `${seconds}`; */
-    timer.textContent = `${days}d:${hours}:${minutes}:${seconds}`;
+    valueOfSeconds.textContent = `${seconds}`;
+ /*    timer.textContent = `${days}d:${hours}:${minutes}:${seconds}`; */
 }
 
 function addLeadingZero(value){
